@@ -373,5 +373,5 @@ class SelfCheckNLI:
                 probs = torch.softmax(logits, dim=-1)
                 prob_ = probs[0][1].item() # prob(contradiction)
                 scores[sent_i, sample_i] = prob_
-        scores_per_sentence = scores.mean(axis=-1)
+        scores_per_sentence = scores
         return scores_per_sentence
